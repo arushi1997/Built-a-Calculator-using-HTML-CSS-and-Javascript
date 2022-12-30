@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <form name="f1">
+            <input type="text" name="no" placeholder="0" id="screen">
+            <input type="button" value="1" onclick="f1.no.value+=1">
+            <input type="button" value="2" onclick="f1.no.value+=2">
+            <input type="button" value="3" onclick="f1.no.value+=3">
+            <input type="button" value="+" onclick="add()">
+        
+            <input type="button" value="4" onclick="f1.no.value+=4">
+            <input type="button" value="5" onclick="f1.no.value+=5">
+            <input type="button" value="6" onclick="f1.no.value+=6">
+            <input type="button" value="-" onclick="sub()">
+        
+            <input type="button" value="7" onclick="f1.no.value+=7">
+            <input type="button" value="8" onclick="f1.no.value+=8">
+            <input type="button" value="9" onclick="f1.no.value+=9">
+            <input type="button" value="/" onclick="di()">
+        
+            <input type="button" value="c" onclick="f1.no.value=''">
+            <input type="button" value="0" onclick="f1.no.value+=0">
+            <input type="button" value="=" onclick="f1.no.value=eval(f1.no.value)">
+            <input type="button" value="x" onclick="multi()">
+
+        </form>
+    </div>
+
+    <script>
+        function add() {
+        var act=0 , b=0;
+        act=f1.no.value;
+        b=act.charAt(act.length-1);
+        // alert(b);
+        if (b=='+' || b=='-' || b=='/' || b=='*') {
+            f1.no.value=act.substring(0,act.length-1);
+            f1.no.value+='+';
+        }
+        else{
+            f1.no.value+='+'; 
+        }
+       }  
+
+       function sub() {
+        var act=0 , b=0;
+        act=f1.no.value;
+        b=act.charAt(act.length-1);
+        // alert(b);
+        if (b=='+' || b=='-' || b=='/' || b=='*') {
+            f1.no.value=act.substring(0,act.length-1);
+            f1.no.value+='-';
+        }
+        else{
+            f1.no.value+='-'; 
+        }
+       }  
+
+       function di() {
+        var act=0 , b=0;
+        act=f1.no.value;
+        b=act.charAt(act.length-1);
+        // alert(b);
+        if (b=='+' || b=='-' || b=='/' || b=='*') {
+            f1.no.value=act.substring(0,act.length-1);
+            f1.no.value+='/';
+        }
+        else{
+            f1.no.value+='/'; 
+        }
+       }  
+
+       function multi() {
+        var act=0 , b=0;
+        act=f1.no.value;
+        b=act.charAt(act.length-1);
+        // alert(b);
+        if (b=='+' || b=='-' || b=='/' || b=='*') {
+            f1.no.value=act.substring(0,act.length-1);
+            f1.no.value+='*';
+        }
+        else{
+            f1.no.value+='*'; 
+        }
+       }  
+    </script>
+</body>
+</html>
